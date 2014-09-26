@@ -31,3 +31,25 @@ Exercises
 ==================
 If you want a good jQuery/JavaScript/BootStrap exercise then I would recommend creating a simple calculator.
 I will update this when I find a good AngularJS Exercise.
+
+
+Current Database Schema
+==================
+Fill the data up with whatever information you want...
+DB Name: Scheduler
+Table: Personnel
+Columns:
+Personnel_ID
+Personnel_First_Name
+Personnel_Last_Name
+Personnel_Email
+Personnel_Mobile
+Personnel_Password
+Personnel_Hours_Scheduled
+
+
+Database Filler Text
+==================
+
+There is an excel sheet that is included with the data. All you need to do is download the excel sheet to your desktop and then once inside of phpmyadmin, you can import the data.
+The data must stay as a .csv file, please do not change this.

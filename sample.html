@@ -8,10 +8,70 @@
     -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>
+    <!--Loading the angular from the website, I am having problems with getting it to load-->
+    <script src="//code.angularjs.org/1.2.12/angular.js"></script>
+    <!--<script src="js/angular.min.js"></script>-->
+    <script src="js/Controllers/sampleController.js"></script>
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 </head>
-<body>
+<style>
+    thead{
+        background-color: #428bca;
+        color: white;
+    }
 
+    tr {
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+</style>
+<body ng-app="personnelApp" ng-controller="sampleCtrl">
+
+<div class="row">
+    <div class="col-sm-6 col-sm-push-3 text-center">
+        <h3>Web Technology Demonstration</h3>
+    </div>
+    <div class="col-sm-12 text-center">
+        <button class="btn btn-danger" type="submit" ng-click="getData()">Show All Employees</button>
+    </div>
+</div>
+<div class="container text-center center-block" style="margin-top: 30px;">
+    <div class="row text-center center-block" ng-show="showData">
+        <div class="col-sm-3 col-sm-offset-1 ">
+            <input type="text" class="form-control" placeholder="Search by Everything" ng-model="search1.$"/>
+        </div>
+        <div class="col-sm-3 ">
+            <input type="text" class="form-control" placeholder="Search by Last Name" ng-model="search2.Personnel_Last_Name"/>
+        </div>
+        <div class="col-sm-3 ">
+            <input type="text" id="searchText" class="form-control" placeholder="Search by First Name" ng-model="search3.Personnel_First_Name"/>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-info hideData " onclick="$('.TableData').addClass('hide'); $('.hideData').addClass('hide'); $('.showData').removeClass('hide');">Hide Data</button>
+            <button class="btn btn-info showData hide" onclick="$('.TableData').removeClass('hide'); $('.hideData').removeClass('hide'); $('.showData').addClass('hide');">Show Data</button>
+        </div>
+    </div>
+</div>
+<div class="table-responsive container text-center TableData" ng-show="showData" style="margin-top: 30px;">
+    <table class="table">
+        <thead class="panel-heading">
+            <td>Name</td>
+            <td>ID Number</td>
+            <td>Email</td>
+            <td>Mobile Number</td>
+            <td>Hours Scheduled</td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in requestData | filter: search1 | filter: search2 | filter: search3">
+                <td>{{data.Personnel_First_Name}} {{data.Personnel_Last_Name}}</td>
+                <td>{{data.Personnel_ID}}</td>
+                <td>{{data.Personnel_Email}}</td>
+                <td>{{data.Personnel_Mobile}}</td>
+                <td>{{data.Personnel_Hours_Scheduled}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
