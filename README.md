@@ -36,15 +36,26 @@ I will update this when I find a good AngularJS Exercise.
 Current Database Schema
 ==================
 Fill the data up with whatever information you want...
-DB Name: Scheduler
-Table: Personnel
-Columns:
+
+####DB Name: 
+Scheduler
+
+####Table: 
+Personnel
+
+####Columns:
 Personnel_ID
+
 Personnel_First_Name
+
 Personnel_Last_Name
+
 Personnel_Email
+
 Personnel_Mobile
+
 Personnel_Password
+
 Personnel_Hours_Scheduled
 
 
