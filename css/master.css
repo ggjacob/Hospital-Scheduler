@@ -1,0 +1,10 @@
+thead{
+    background-color: #428bca;
+    color: white;
+}
+
+tr {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}

@@ -1,0 +1,75 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Insert Calendar Event</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="margin-bottom: 15px;">
+                    <div class="col-sm-12">
+                        <h4>Event Title:</h4>
+                    </div>
+                    <div class="col-sm-12" >
+                        <input type="text" class="form-control" placeholder="Event Title" ng-model="eventTitle"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 15px; border-top: 1px solid lightgray">
+                    <div class="col-sm-12">
+                        <h4>Start Date: </h4>
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Year:</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <select class="form-control" ng-model="Syear" ng-init="Syear = '2014'">
+                            <option value="2014"  selected="selected">2014</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Month:</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="MM" size="2" ng-model="Smonth" />
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Day:</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="DD" size="2" ng-model="Sday" />
+                    </div>
+                </div>
+
+                <div class="row" style="border-top: 1px solid lightgray;">
+                    <div class="col-sm-12">
+                        <h4>End Date: </h4>
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Year:</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <select class="form-control" ng-model="Eyear" ng-init="Eyear = '2014'">
+                            <option value="2014"  selected="selected">2014</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Month:</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="MM" size="2" ng-model="Emonth" />
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Day:</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="DD" size="2" ng-model="Eday" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="insertEvent()">Add Event</button>
+            </div>
+        </div>
+    </div>
+</div>
