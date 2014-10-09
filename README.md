@@ -58,6 +58,8 @@ Personnel_Password
 
 Personnel_Hours_Scheduled
 
+Personnel_Department
+
 
 Database Filler Text
 ==================
