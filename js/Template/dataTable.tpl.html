@@ -23,6 +23,7 @@
         <td>Email</td>
         <td>Mobile Number</td>
         <td>Hours Scheduled</td>
+        <td>Department</td>
         </thead>
         <tbody>
         <tr ng-repeat="data in requestData | filter: search1 | filter: search2 | filter: search3">
@@ -31,6 +32,7 @@
             <td>{{data.Personnel_Email}}</td>
             <td>{{data.Personnel_Mobile}}</td>
             <td>{{data.Personnel_Hours_Scheduled}}</td>
+            <td>{{data.Personnel_Department}}</td>
         </tr>
         </tbody>
     </table>
