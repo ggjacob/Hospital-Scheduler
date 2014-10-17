@@ -19,6 +19,14 @@ include_once "php/headSection.php";
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2" ng-repeat="data in requestData">
+            {{data.EMPLOYEE_FNAME}}
+        </div>
+
+    </div>
+</div>
 
 
 
