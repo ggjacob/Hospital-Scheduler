@@ -1,7 +1,6 @@
 <?php
 include 'SessionLogin.php';
 
-//$sql = ("SELECT * FROM personnel");
 $sql = ("SELECT DISTINCT
 b.EMPLOYEE_FNAME AS Name,
 GROUP_CONCAT(a.SCHEDULE_DAY ORDER BY FIELD(a.SCHEDULE_DAY, 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY')) AS Day,

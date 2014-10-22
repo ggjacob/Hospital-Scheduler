@@ -16,6 +16,6 @@
 <script src="/Hospital-Scheduler/js/bootstrap.min.js"></script>
 <!--Loading the angular from the website, I am having problems with getting it to load-->
 <script src="//code.angularjs.org/1.2.12/angular.js"></script>
-<script src="/Hospital-Scheduler/js/Controllers/sampleController.js"></script>
+<script src="/Hospital-Scheduler/js/Controllers/controller.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 <script src="/Hospital-Scheduler/js/master.js"></script>

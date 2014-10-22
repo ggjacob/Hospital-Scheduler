@@ -2,7 +2,7 @@
 include_once "php/headSection.php";
 ?>
 <!--The head section can be found in the headSection.php file-->
-<body  ng-app="calendarApp" ng-controller="sampleCtrl" ng-init="getData()">
+<body  ng-app="calendarApp" ng-controller="controller" ng-init="getCalendarData()">
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
