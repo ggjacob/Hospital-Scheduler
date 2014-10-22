@@ -45,11 +45,14 @@ include_once "php/headSection.php";
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../logout.html">Log Out</a></li>
+                <li><a href="#">Log Out</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+
+
 
 <div class="container">
     <div class="row text-center">
@@ -70,8 +73,8 @@ include_once "php/headSection.php";
                 <tbody>
                     <tr ng-repeat="data in requestData">
                         <td>{{data.Name}}</td>
-                        <td ng-repeat="data2 in data.Shift track by $index">
-                            {{data2}}
+                        <td ng-repeat="shifts in data.Shift track by $index">
+                            {{shifts}}
                         </td>
                     </tr>
                 </tbody>
