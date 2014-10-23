@@ -1,6 +1,10 @@
 <?php
 include_once "php/headSection.php";
 ?>
+<body  ng-app="calendarApp" ng-controller="controller" ng-init="getCalendarData()">
+<?php
+include_once "php/navBar.php";
+?>
 <div class="container">
     <div class="row text-center">
         <h3 style="border-bottom:1px solid lightgray">Calendar View</h3>
