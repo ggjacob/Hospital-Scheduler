@@ -459,12 +459,13 @@ calendarApp.controller("controller",['$scope', '$http', function($scope, $http) 
             });
     };
 
-
+    $scope.shifts = {};
     $scope.getShifts = function () {
         $http.get('php/getShiftData.php')
             .success(function (data) {
                 //Below will show the data being sent back from the php file.
                 console.log(data);
+                $scope.shifts = (data);
 
             })
     .error(function (data) {
