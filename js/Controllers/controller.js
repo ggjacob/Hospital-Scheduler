@@ -461,7 +461,6 @@ calendarApp.controller("controller",['$scope', '$http', function($scope, $http) 
 
 
     $scope.getShifts = function () {
-        //TODO: Get JSON data back from PHP File.
         $http.get('php/getShiftData.php')
             .success(function (data) {
                 //Below will show the data being sent back from the php file.
