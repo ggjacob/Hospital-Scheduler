@@ -11,7 +11,7 @@ include_once "php/navBar.php";
     </div>
         <div class="table-responsive">
             <table class="table">
-                <thead>
+                <thead class="calendarHead">
                     <td>Name</td>
                     <td>Monday</td>
                     <td>Tuesday</td>
