@@ -482,6 +482,7 @@ calendarApp.controller("controller",['$scope', '$http', function($scope, $http) 
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
             //Below will show the data being sent back from the php file.
+            $scope.successMessage = "Update Successful";
             location.reload();
 
         })

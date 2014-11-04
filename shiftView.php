@@ -11,26 +11,39 @@ include_once "php/navBar.php";
         <h2 style="border-bottom:1px solid lightgray">Current Shift Blocks</h2>
     </div>
 
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <td>Shift ID</td>
-                <td>Shift Start Time</td>
-                <td>Shift End Time</td>
-                <td></td>
-            </thead>
-            <tbody>
-                <tr class="popOut" ng-repeat="data in shifts"  data-toggle="modal" data-target="#myModal" ng-click="getShiftDetails(data.Start, data.End)"  >
-                    <td>{{data.ID}}</td>
-                    <td>{{data.Start}}</td>
-                    <td>{{data.End}}</td>
-                    <td><a style="cursor:pointer;">Details</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="table-responsive text-center">
+                <table class="table table-striped">
+                    <thead>
+                    <td>Shift ID</td>
+                    <td>Shift Start Time</td>
+                    <td>Shift End Time</td>
+                    <td></td>
+                    </thead>
+                    <tbody>
+                    <tr class="popOut" ng-repeat="data in shifts"  data-toggle="modal" data-target="#myModal" ng-click="getShiftDetails(data.Start, data.End)"  >
+                        <td>{{data.ID}}</td>
+                        <td>{{data.Start}}</td>
+                        <td>{{data.End}}</td>
+                        <td><span class="glyphicon glyphicon-info-sign"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-transparent" style="width:100%; font-weight:800;">Add New Shift</button>
+            <button class="btn btn-transparent" style="width:100%; font-weight:800; margin-top:10px;">Delete Shift</button>
+        </div>
+    </div>
+
+    <div class="row">
 
     </div>
-    <!-- Modal -->
+
+
+    <!-- Modal for Shift Updates -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -39,6 +52,9 @@ include_once "php/navBar.php";
                     <h4 class="modal-title" id="myModalLabel">Shift Details</h4>
                 </div>
                 <div class="modal-body">
+                    <div class="alert alert-success text-center" ng-show="successMessage" role="alert">
+                       <h3>{{successMessage}}</h3>
+                    </div>
                     <form ng-submit="updateShifts()" role="form">
                         <div class="form-group">
                             <label for="shiftstart">Shift Start:</label>
