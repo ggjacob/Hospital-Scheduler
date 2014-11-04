@@ -1,10 +1,14 @@
 .calendarHead{
-    background-color: #428bca;
-    color: white;
-}
+     background-color: #428bca;
+     color: white;
+ }
 
 tr {
     border-left: 1px solid lightgray;
     border-right: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
+}
+.popOut:hover{
+    outline: 7px solid #31b0d5;
+    cursor: pointer;
 }
