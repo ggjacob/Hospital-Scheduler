@@ -22,7 +22,7 @@ include_once "php/navBar.php";
                     <td></td>
                     </thead>
                     <tbody>
-                    <tr class="popOut" ng-repeat="data in shifts"  data-toggle="modal" data-target="#myModal" ng-click="getShiftDetails(data.Start, data.End)"  >
+                    <tr class="popOut" ng-repeat="data in shifts"  data-toggle="modal" data-target="#myModal" ng-click="getShiftDetails(data.ID,data.Start, data.End)"  >
                         <td>{{data.ID}}</td>
                         <td>{{data.Start}}</td>
                         <td>{{data.End}}</td>
@@ -54,20 +54,24 @@ include_once "php/navBar.php";
                     <div class="alert alert-success text-center" ng-show="successMessage" role="alert">
                         <h3>{{successMessage}}</h3>
                     </div>
-                    <form ng-submit="updateShifts()" role="form">
+                    <form ng-submit="addNewShift()" role="form">
                         <div class="form-group">
-                            <label for="shiftbegin">Shift Start:</label>
-                            <input type="text" class="form-control" ng-model="formData.shiftStart" id="shiftbegin" placeholder="Enter Shift Start Time">
+                            <label for="shiftID">Shift ID:</label>
+                            <input type="text" class="form-control" ng-model="addShift.shiftID" id="shiftID" placeholder="Enter Shift ID">
                         </div>
                         <div class="form-group">
-                            <label for="shiftclose">Shift End:</label>
-                            <input type="text" class="form-control" ng-model="formData.shiftEnd" id="shiftclose" placeholder="Enter Shift End Time">
+                            <label for="shiftBegin">Shift Start:</label>
+                            <input type="text" class="form-control" ng-model="addShift.shiftBegin" id="shiftBegin" placeholder="Enter Shift Start Time">
+                        </div>
+                        <div class="form-group">
+                            <label for="shiftClose">Shift End:</label>
+                            <input type="text" class="form-control" ng-model="addShift.shiftClose" id="shiftClose" placeholder="Enter Shift End Time">
                         </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Add Shift</button>
                     </form>
                 </div>
             </div>
@@ -87,6 +91,10 @@ include_once "php/navBar.php";
                        <h3>{{successMessage}}</h3>
                     </div>
                     <form ng-submit="updateShifts()" role="form">
+                        <div class="form-group hide">
+                            <label for="shiftID">Shift Start:</label>
+                            <input type="text" class="form-control" ng-model="formData.shiftID" id="shiftID">
+                        </div>
                         <div class="form-group">
                             <label for="shiftstart">Shift Start:</label>
                             <input type="text" class="form-control" ng-model="formData.shiftStart" id="shiftStart" placeholder="Enter Shift Start Time">
@@ -105,16 +113,4 @@ include_once "php/navBar.php";
             </div>
         </div>
     </div>
-
-<!--    <div class="row" >-->
-<!--        <div class="col-lg-4">-->
-<!--            {{data.ID}}-->
-<!--        </div>-->
-<!--        <div class="col-lg-4">-->
-<!--            {{data.Start}}-->
-<!--        </div>-->
-<!--        <div class="col-lg-4">-->
-<!--            {{data.End}}-->
-<!--        </div>-->
-<!--    </div>-->
 </div>

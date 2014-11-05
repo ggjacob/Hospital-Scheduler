@@ -14,6 +14,7 @@ calendarApp.controller("controller",['$scope', '$http', function($scope, $http) 
     $scope.showData = '';
     $scope.testData = [];
     $scope.formData = {};
+    $scope.addShift = {};
 
     //TODO: Uncomment the line below once you are ready to check the data coming back from the AJAX request.
     // This works like a normal function call.
@@ -490,7 +491,24 @@ calendarApp.controller("controller",['$scope', '$http', function($scope, $http) 
             });
     }
 
-    $scope.getShiftDetails = function(startTime, endTime){
+    $scope.addNewShift = function() {
+        $http({
+            method: "POST",
+            url: "php/addNewShift.php",
+            data: $.param($scope.addShift),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).success(function (data) {
+            console.log(data);
+            //Below will show the data being sent back from the php file.
+            $scope.successMessage = "Update Successful";
+            location.reload();
+        })
+            .error(function (data) {
+            });
+    }
+
+    $scope.getShiftDetails = function(ID, startTime, endTime){
+        $scope.formData.shiftID = ID;
         $scope.formData.shiftStart = startTime;
         $scope.formData.shiftEnd = endTime;
     }
