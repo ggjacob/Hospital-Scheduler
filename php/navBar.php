@@ -41,8 +41,37 @@
                 <li><a href="shiftView.php">Shift View</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="modal" data-target="#submitBug">Submit Feedback</a></li>
                 <li><a href="#">Log Out</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+<div class="modal fade" id="submitBug" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel">Submit Feedback</h4>
+            </div>
+            <div class="modal-body">
+                    <form action="php/submitEmail.php" method="post">
+                        <div class="form-group">
+                            <label for="">Your Email:</label>
+                            <input type="text" class="form-control" name="from" placeholder="Enter Your Email Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Message:</label>
+                            <textarea class="form-control" rows="8"  name="message" placeholder="Enter your message here..."></textarea>
+                        </div>
+                   <div class="row">
+                       <div class="col-sm-6 col-sm-offset-3">
+                           <button type="submit" name="contactForm" class="btn btn-primary col-sm-12">Submit</button>
+                       </div>
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
