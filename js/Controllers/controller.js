@@ -1,4 +1,4 @@
-var calendarApp = angular.module('calendarApp', ['ngRoute']);
+var calendarApp = angular.module('calendarApp', ['ngRoute', 'ngMessages', 'ngAnimate']);
 /*calendarApp.config(function ($routeProvider) {
     $routeProvider
         .when('/',

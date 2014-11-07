@@ -16,5 +16,8 @@
     <script src="//code.angularjs.org/1.3.1/angular.js"></script>
     <script src="/Hospital-Scheduler/js/Controllers/controller.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-messages.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-animate.js"></script>
+
     <script src="/Hospital-Scheduler/js/master.js"></script>
 </head>
