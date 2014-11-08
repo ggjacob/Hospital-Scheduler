@@ -54,18 +54,26 @@ include_once "php/navBar.php";
                     <div class="alert alert-success text-center" ng-show="successMessage" role="alert">
                         <h3>{{successMessage}}</h3>
                     </div>
-                    <form ng-submit="addNewShift()" role="form">
+                    <form ng-submit="addNewShift()" name="formAddShift" role="form">
                         <div class="form-group">
                             <label for="shiftID">Shift ID:</label>
                             <input type="text" class="form-control" ng-model="addShift.shiftID" id="shiftID" placeholder="Enter Shift ID">
                         </div>
                         <div class="form-group">
                             <label for="shiftBegin">Shift Start:</label>
-                            <input type="text" class="form-control" ng-model="addShift.shiftBegin" id="shiftBegin" placeholder="Enter Shift Start Time">
+                            <input type="text" name="addShiftStart" class="form-control" style="width:80px;" required ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" minlength="5" maxlength="5" ng-model="addShift.shiftBegin" id="shiftBegin" placeholder="HH:MM">
+                        </div>
+                        <div ng-messages="formAddShift.addShiftStart.$error" style="margin-bottom:10px;">
+                            <div ng-message="minlength">A minimum of 5 characters is required.</div>
+                            <div ng-message="pattern">You Must enter the time in military format (e.g 02:30 or 14:23)</div>
                         </div>
                         <div class="form-group">
                             <label for="shiftClose">Shift End:</label>
-                            <input type="text" class="form-control" ng-model="addShift.shiftClose" id="shiftClose" placeholder="Enter Shift End Time">
+                            <input type="text" name="addShiftEnd" class="form-control" style="width:80px;" required ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" minlength="5" maxlength="5" ng-model="addShift.shiftClose" id="shiftClose" placeholder="HH:MM">
+                        </div>
+                        <div ng-messages="formAddShift.addShiftEnd.$error" style="margin-bottom:10px;">
+                            <div ng-message="minlength">A minimum of 5 characters is required.</div>
+                            <div ng-message="pattern">You Must enter the time in military format (e.g 02:30 or 14:23)</div>
                         </div>
 
                 </div>
@@ -97,7 +105,7 @@ include_once "php/navBar.php";
                         </div>
                         <div class="form-group">
                             <label for="shiftstart">Shift Start:</label>
-                            <input type="type" ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" style="width:70px;"  class="form-control input-xs" name="updateShiftStart" maxlength="5"  minlength="5" ng-model="formData.shiftStart" id="shiftStart" placeholder="XXXX">
+                            <input type="type" ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" style="width:70px;"  class="form-control input-xs" name="updateShiftStart" maxlength="5"  minlength="5" ng-model="formData.shiftStart" id="shiftStart" placeholder="HH:MM">
                         </div>
                         <div ng-messages="formUpdateShift.updateShiftStart.$error" style="margin-bottom:10px;">
                             <div ng-message="minlength">A minimum of 5 characters is required.</div>
@@ -105,7 +113,7 @@ include_once "php/navBar.php";
                         </div>
                         <div class="form-group">
                             <label for="shiftend">Shift End Time:</label>
-                            <input type="text" class="form-control" style="width:70px;"  ng-model="formData.shiftEnd" ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" name="updateShiftEnd" minlength="5" maxlength="5" id="shiftEnd" placeholder="XXXX">
+                            <input type="text" class="form-control" style="width:70px;"  ng-model="formData.shiftEnd" ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" name="updateShiftEnd" minlength="5" maxlength="5" id="shiftEnd" placeholder="HH:MM">
                         </div>
                         <div ng-messages="formUpdateShift.updateShiftEnd.$error" style="margin-bottom:10px;">
                             <div ng-message="minlength">A minimum of 5 characters is required.</div>
