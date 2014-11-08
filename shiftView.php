@@ -97,21 +97,19 @@ include_once "php/navBar.php";
                         </div>
                         <div class="form-group">
                             <label for="shiftstart">Shift Start:</label>
-                            <input type="type" ng-pattern="/^\d+$/" style="width:60px;"  class="form-control input-xs" name="updateShiftStart" maxlength="4"  minlength="4" ng-model="formData.shiftStart" id="shiftStart" placeholder="XXXX">
+                            <input type="type" ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" style="width:70px;"  class="form-control input-xs" name="updateShiftStart" maxlength="5"  minlength="5" ng-model="formData.shiftStart" id="shiftStart" placeholder="XXXX">
                         </div>
                         <div ng-messages="formUpdateShift.updateShiftStart.$error" style="margin-bottom:10px;">
-                            <div ng-message="minlength">Please enter the start time in military time format</div>
-                            <div ng-message="maxlength">Please enter the start time in military format</div>
-                            <div ng-message="pattern">Must be a number</div>
+                            <div ng-message="minlength">A minimum of 5 characters is required.</div>
+                            <div ng-message="pattern">You Must enter the time in military format (e.g 02:30 or 14:23)</div>
                         </div>
                         <div class="form-group">
                             <label for="shiftend">Shift End Time:</label>
-                            <input type="text" class="form-control" style="width:60px;"  ng-model="formData.shiftEnd" ng-pattern="/^\d+$/" name="updateShiftEnd" minlength="4" maxlength="4" id="shiftEnd" placeholder="XXXX">
+                            <input type="text" class="form-control" style="width:70px;"  ng-model="formData.shiftEnd" ng-pattern="/^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/" name="updateShiftEnd" minlength="5" maxlength="5" id="shiftEnd" placeholder="XXXX">
                         </div>
                         <div ng-messages="formUpdateShift.updateShiftEnd.$error" style="margin-bottom:10px;">
-                            <div ng-message="minlength">Please enter the end time in military time format</div>
-                            <div ng-message="maxlength">Please enter the end time in military time format</div>
-                            <div ng-message="pattern">Must be a number</div>
+                            <div ng-message="minlength">A minimum of 5 characters is required.</div>
+                            <div ng-message="pattern">You Must enter the time in military format (e.g 02:30 or 14:23)</div>
                         </div>
                 </div>
                 <div class="modal-footer">
