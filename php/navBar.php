@@ -42,6 +42,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#submitBug">Submit Feedback</a></li>
+                <li><a href="faq.php">FAQ</a></li>
+
                 <li><a href="#">Log Out</a></li>
             </ul>
         </div>
