@@ -513,4 +513,33 @@ calendarApp.controller("controller",['$scope', '$http', function($scope, $http) 
         $scope.formData.shiftEnd = endTime;
     }
 
+
+/*
+* Below is the demo data for the demo.php page. You can see that we have done this in two ways.
+* One way is using a JSON object and the other way is using just a plain, normal array.
+* As you can see, angular will handle the data almost the same on the front end.
+* */
+
+    $scope.exampleData = {};
+    $scope.exampleData = [
+        {
+            name: 'Duke'
+        },
+        {
+            name: 'Kyle'
+        },
+        {
+            name: 'Kris'
+        },
+        {
+            name: 'Jarrin'
+        },
+        {
+            name: 'Ryan'
+        }
+    ]
+
+    $scope.exampleArray = [];
+    $scope.exampleArray = ['Duke', 'Kyle', 'Kris', 'Jarrin', 'Ryan'];
+
 }]);
