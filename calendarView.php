@@ -1,4 +1,13 @@
 <?php
+/* Hiding Login checking till it is need.
+ * session_start(); //Begin session, used for login verification
+ * //Checks for logged in status, redirects to login page if the user is not logged in.
+ * if (!(isset($_SESSION["logged_in"]))) {
+ * header('Location: login.php');
+ * exit();
+ * }
+ */?>
+<?php
 include_once "php/headSection.php";
 ?>
 <body  ng-app="calendarApp" ng-controller="controller" ng-init="getCalendarData()">
@@ -131,4 +140,3 @@ include_once "php/navBar.php";
 
 
 </body>
-</html>
