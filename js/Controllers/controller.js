@@ -202,14 +202,67 @@ $scope.getCalendarData = function(startDay, endDay){
 
         })
 
-}
+};
+
+    $scope.shifts = {};
+    $scope.getShifts = function () {
+        $http.get('php/getShiftData.php')
+            .success(function (data) {
+                //Below will show the data being sent back from the php file.
+                console.log(data);
+                $scope.shifts = (data);
+
+            })
+            .error(function (data) {
+            });
+    };
+
+    $scope.updateShifts = function() {
+        console.log('here');
+        $http({
+            method: "POST",
+            url: "php/updateShift.php",
+            data: $.param($scope.formData),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).success(function (data) {
+            //Below will show the data being sent back from the php file.
+            $scope.successMessage = "Update Successful";
+            location.reload();
+
+        })
+            .error(function (data) {
+            });
+    }
+
+    $scope.addNewShift = function() {
+        $http({
+            method: "POST",
+            url: "php/addNewShift.php",
+            data: $.param($scope.addShift),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).success(function (data) {
+            console.log(data);
+            //Below will show the data being sent back from the php file.
+            $scope.successMessage = "Update Successful";
+            location.reload();
+        })
+            .error(function (data) {
+            });
+    }
+
+    $scope.getShiftDetails = function(ID, startTime, endTime){
+        $scope.formData.shiftID = ID;
+        $scope.formData.shiftStart = startTime;
+        $scope.formData.shiftEnd = endTime;
+    }
 
 
-/*
-* Below is the demo data for the demo.php page. You can see that we have done this in two ways.
-* One way is using a JSON object and the other way is using just a plain, normal array.
-* As you can see, angular will handle the data almost the same on the front end.
-* */
+
+    /*
+    * Below is the demo data for the demo.php page. You can see that we have done this in two ways.
+    * One way is using a JSON object and the other way is using just a plain, normal array.
+    * As you can see, angular will handle the data almost the same on the front end.
+    * */
 
     $scope.exampleData = {};
     $scope.exampleData = [
