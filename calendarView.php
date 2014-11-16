@@ -10,44 +10,38 @@
 <?php
 include_once "php/headSection.php";
 ?>
-<body  ng-app="calendarApp" ng-controller="controller" ng-init="getCalendarData(1415602800, 1416121200)">
+<body  ng-app="calendarApp" ng-controller="controller" ng-init="findMonday()">
 <?php
 include_once "php/navBar.php";
 ?>
-<!--<div class="container">-->
-<!--    <div class="row text-center">-->
-<!--        <h3 style="border-bottom:1px solid lightgray">Calendar View</h3>-->
-<!--    </div>-->
-<!--        <div class="table-responsive">-->
-<!--            <table class="table">-->
-<!--                <thead class="calendarHead">-->
-<!--                    <td>Name</td>-->
-<!--                    <td>Monday</td>-->
-<!--                    <td>Tuesday</td>-->
-<!--                    <td>Wednesday</td>-->
-<!--                    <td>Thursday</td>-->
-<!--                    <td>Friday</td>-->
-<!--                    <td>Saturday</td>-->
-<!--                    <td>Sunday</td>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                    <tr ng-repeat="data in requestData">-->
-<!--                        <td>{{data.Name}}</td>-->
-<!--                        <td ng-repeat="shifts in data.Shift track by $index">-->
-<!--                            {{shifts}}-->
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                </tbody>-->
-<!--            </table>-->
-<!--        </div>-->
-<!--</div>-->
+<div class="container">
+    <div class="row text-center">
+        <h3 style="border-bottom:1px solid lightgray">Calendar View</h3>
+    </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="calendarHead text-center" >
+                    <td>Name</td>
+                    <td ng-repeat="calendar in tableHeader">{{calendar | date: 'EEE'}}</br>{{calendar | date:'MM-dd-yyyy'}}</td>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in requestData">
+                        <td>{{data.first_name}}</td>
+                        <td ng-repeat="shifts in data.shift track by $index">
+                            {{shifts}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
 
-<!-- Button trigger modal -->
+<!-- Button trigger modal-->
 <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shiftDetails">-->
 <!--    Shift Details-->
 <!--</button>-->
-<!---->
-<!--<!-- Modal For Shift Details-->-->
+
+<!-- Modal For Shift Details-->
 <!--<div class="modal fade" id="shiftDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
 <!--    <div class="modal-dialog">-->
 <!--        <div class="modal-content">-->
@@ -94,8 +88,8 @@ include_once "php/navBar.php";
 <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeOff">-->
 <!--    Request Time Off-->
 <!--</button>-->
-<!---->
-<!--<!-- Modal For Requesting Time Off-->-->
+
+<!-- Modal For Requesting Time Off-->
 <!--<div class="modal fade" id="timeOff" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
 <!--    <div class="modal-dialog">-->
 <!--        <div class="modal-content">-->
@@ -132,10 +126,10 @@ include_once "php/navBar.php";
 <!--    </div>-->
 <!--</div>-->
 
-<!--<!--The below calls two partial templates-->-->
+<!--<!--The below calls two partial templates-->
 <!--<div ng-include="'js/Template/dataTable.tpl.html'"></div>-->
 <!--<div ng-include="'js/Template/calendarData.tpl.html'"></div>-->
-<!--<!-- This will call the modal template -->-->
+<!--<!-- This will call the modal template -->
 <!--<div ng-view></div>-->
 
 

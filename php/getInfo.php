@@ -24,6 +24,7 @@ inner join
 employee b on b.employee_id = a.employee_id
 inner join
 shift c on c.shift_id = a.shift_id
+where a.date >= '".$_POST['startDate']."' and a.date <= '".$_POST['endDate']."'
 group by b.first_name;       ");
 
 
