@@ -62,6 +62,7 @@ $scope.getCalendarData = function(startDay, endDay){
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     })
         .success(function(data){
+            console.log(data);
             angular.forEach(data, function(val){
                 //Create new arrays to hold the data in.
                 $scope.newDates = [];
@@ -74,6 +75,8 @@ $scope.getCalendarData = function(startDay, endDay){
                 var oneDay = 24*60*60*1000;
                 var startDay1 = startDay * 1000;
                 var endDay1 = endDay * 1000;
+                console.log(new Date(startDay1));
+                console.log(new Date(endDay1));
                 for(var i = 0; i < val.date.length; i ++){
                     var difference = 0;
                     var currentDate = Date.parse(val.date[i]) + oneDay;
@@ -114,7 +117,10 @@ $scope.getCalendarData = function(startDay, endDay){
                     //Else there are more than one item.
                     else {
                         if (i == 0) {
+                            console.log("curr" + new Date(currentDate));
+                            console.log("start" + new Date(startDay1));
                             difference = Math.floor((currentDate - startDay1) / oneDay);
+                            console.log(val.first_name + " " + difference);
                             if (difference > 0) {
 
                                 $scope.newDates.push(new Date(currentDate));
@@ -146,6 +152,7 @@ $scope.getCalendarData = function(startDay, endDay){
                                 }
                                 else {
                                     $scope.newShifts.push(val.shift[i]);
+                                    console.log($scope.newShifts);
                                     $scope.newDates.push(new Date(currentDate));
                                 }
                             }

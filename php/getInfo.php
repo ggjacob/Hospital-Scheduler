@@ -17,7 +17,7 @@ include 'SessionLogin.php';
 
 $sql = ("SELECT
 b.first_name,
-group_concat(a.date) as date,
+group_concat(a.date order by a.date) as date,
 group_concat(CONCAT_WS(' - ', c.start_time, c.end_time)) as shift
 from schedule a
 inner join
