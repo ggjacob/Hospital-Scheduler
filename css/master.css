@@ -9,7 +9,7 @@ tr {
     border-bottom: 1px solid lightgray;
 }
 .popOut:hover{
-    outline: 7px solid #31b0d5;
+    background: #e3e3e3 !important;
     cursor: pointer;
 }
 .btn-transparent{
@@ -24,4 +24,7 @@ tr {
 }
 .nav .navbar-nav{
     color:white;
+}
+.hover-nav:hover{
+    opacity: 0.4;
 }
