@@ -18,8 +18,15 @@ include_once "php/navBar.php";
     <div class="row text-center">
         <h3 style="border-bottom:1px solid lightgray">Calendar View</h3>
     </div>
+    <div class="row text-center" style="margin-bottom:5px;">
+        <div class="btn-group" role="group" aria-label="...">
+            <button class="btn-primary btn" ng-click="previousWeek()">Previous Week</button>
+            <button class="btn-primary btn" ng-click="nextWeek()">Next Week</button>
+        </div>
+    </div>
+
         <div class="table-responsive">
-            <table class="table">
+            <table class="table text-center">
                 <thead class="calendarHead text-center" >
                     <td>Name</td>
                     <td ng-repeat="calendar in tableHeader">{{calendar | date: 'EEE'}}</br>{{calendar | date:'MM-dd-yyyy'}}</td>
