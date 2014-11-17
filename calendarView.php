@@ -139,5 +139,7 @@ include_once "php/navBar.php";
 <!--<!-- This will call the modal template -->
 <!--<div ng-view></div>-->
 
-
+<?php
+include_once "php/footer.php";
+?>
 </body>

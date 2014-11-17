@@ -129,3 +129,6 @@ include_once "php/navBar.php";
         </div>
     </div>
 </div>
+<?php
+include_once "php/footer.php";
+?>
