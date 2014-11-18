@@ -31,7 +31,6 @@ function generateHeader (startDay,endDay){
         startDay += oneDay;
         $scope.tableHeader.push(new Date(startDay));
     }
-    console.log($scope.tableHeader);
 }
 
 $scope.findMonday = function(){
@@ -69,7 +68,7 @@ $scope.findMonday = function(){
         var sevenDays = 24*60*60*1000 * 7;
         $scope.testDate = $scope.testDate + sevenDays;
         $scope.sevenDay =  $scope.sevenDay + sevenDays;
-        $scope.getCalendarData($scope.testDate, $scope.sevenDay);
+        $scope.getCalendarData($scope.testDate/1000, $scope.sevenDay/1000);
     };
 
 
@@ -262,167 +261,6 @@ $scope.findMonday = function(){
                             }
                         }
                     }
-
-                    //Check if there is only one item in the list.
-//                    if(val.date.length === 1){
-//                        var startDifference = Math.floor((currentDate - startDay1)/oneDay);
-//                        var endDifference =  Math.ceil((endDay1 - currentDate)/oneDay);
-//                        //Check if the current date is not the start date.
-//                        if(startDifference > 0){
-//                            //If not, then we start by pushing the start date with an empty shift.
-//                            $scope.newDates.push(new Date(startDay1));
-//                            $scope.newShifts.push('');
-//                            //We then use a while loop to progressively keep adding empty shifts.
-//                            while(startDifference > 1){
-//                                startDay1 += $scope.oneDay;
-//                                $scope.newDates.push(new Date(startDay1));
-//                                $scope.newShifts.push('');
-//                                startDifference -= 1;
-//                            }
-//                            //We end by adding the current date with the associated shift.
-//                            $scope.newDates.push(new Date(currentDate));
-//                            $scope.newShifts.push(val.shift[i]);
-//                        }
-//                        //Else, it is the start date and we just add it with the shift to the array.
-//                        else{
-//                            $scope.newDates.push(new Date(currentDate));
-//                            $scope.newShifts.push(val.shift[i]);
-//                        }
-//                        //Checks to see if the current date is the end date.
-//                        if(endDifference > 1){
-//                            //if not, we repeat the same process as the start above.
-//                            while(endDifference > 1){
-//                                currentDate = currentDate + oneDay;
-//                                $scope.newDates.push(new Date(currentDate));
-//                                $scope.newShifts.push('');
-//                                endDifference -= 1;
-//                            }
-//                        }
-//                        //Some differences have been below 0 for some reason?
-//                        else if (endDifference <= 0){
-//                            break;
-//                        }
-//                        //else we are a
-//                        else{
-//                            $scope.newDates.push(new Date(endDay1));
-//                            $scope.newShifts.push(val.shift[i]);
-//                        }
-//                    }
-//
-//                    //Else there are more than one item.
-//                    else {
-//                        var check = false;
-//                        if (i == 0) {
-//                            //Check if the current date is the start day
-//                            difference = Math.ceil((currentDate - startDay1) / oneDay);
-//
-//                           // var holdDate = currentDate;
-//                            //If so, then we do things.
-//                            if (difference > 1) {
-//                                check = true;
-//                                //Push the current date onto the list.
-//                                $scope.newDates.push(new Date(startDay1));
-//                                // console.log(val.first_name + " here " + new Date(startDay1));
-//                                $scope.newShifts.push('');
-//
-//                                while (difference > 1) {
-//                                    startDay1 = startDay1 + oneDay;
-//                                    $scope.newShifts.push('');
-//                                    $scope.newDates.push(new Date(startDay1));
-//                                    difference -= 1;
-//
-//                                }
-//                                $scope.newShifts.push(val.shift[i]);
-//                                $scope.newDates.push(new Date(currentDate));
-//                                //console.log(val.first_name + " here " + new Date(currentDate))
-//
-//
-//                                secondDate = Date.parse(val.date[i + 1]) + oneDay;
-//                                // currentDate = holdDate;
-//                                difference = Math.ceil((secondDate - currentDate) / oneDay);
-//                                if (difference > 1) {
-//                                    if (!check) {
-//                                        $scope.newDates.push(new Date(currentDate));
-//                                        $scope.newShifts.push(val.shift[i]);
-//                                    }
-//                                    while (difference > 1) {
-//
-//                                        currentDate += oneDay;
-//                                        $scope.newShifts.push('');
-//                                        $scope.newDates.push(new Date(currentDate));
-//
-//                                        difference -= 1;
-//                                    }
-//                                }
-//                            }
-//                            else {
-//                                var secondDate = Date.parse(val.date[i + 1]) + oneDay;
-//                                difference = Math.ceil((secondDate - currentDate) / oneDay);
-//
-//                                if (difference > 1) {
-//                                    $scope.newDates.push(new Date(currentDate));
-//                                    $scope.newShifts.push(val.shift[i]);
-//                                    while (difference > 1) {
-//                                        currentDate += oneDay;
-//                                        $scope.newShifts.push('');
-//                                        $scope.newDates.push(new Date(currentDate));
-//                                        difference -= 1;
-//                                    }
-//                                }
-//                                else {
-//                                    $scope.newShifts.push(val.shift[i]);
-//                                    $scope.newDates.push(new Date(currentDate));
-//                                }
-//                            }
-//                        }
-//                        else if(i == (val.date.length - 1)) {
-//                           // currentDate = Date.parse(val.date[i]) + oneDay;
-//                            difference = Math.ceil((endDay1 - currentDate) / oneDay);
-//                            console.log(val.first_name + " " + difference)
-//                            if (difference > 1) {
-//                                $scope.newShifts.push(val.shift[i]);
-//                                $scope.newDates.push(new Date(currentDate));
-//                                while (difference > 1) {
-//                                    currentDate = currentDate + oneDay;
-//                                    $scope.newShifts.push('');
-//                                    $scope.newDates.push(new Date(currentDate));
-//                                    difference -= 1;
-//                                }
-//                                $scope.newShifts.push('');
-//                                $scope.newDates.push(new Date(endDay1));
-//
-//                            }
-//                            else if(difference == 1){
-//                                $scope.newShifts.push(val.shift[i]);
-//                                $scope.newDates.push(new Date(currentDate));
-//                                $scope.newShifts.push('');
-//                                $scope.newDates.push(new Date(endDay1));
-//                            }
-//                            else {
-//                                $scope.newShifts.push(val.shift[i]);
-//                                $scope.newDates.push(new Date(endDay1));
-//                            }
-//                        }
-//                        else {
-//                            secondDate = Date.parse(val.date[i + 1]) + oneDay;
-//                            difference = Math.ceil((secondDate - currentDate) / oneDay);
-//                            console.log(val.first_name + " " + difference + " " + new Date(currentDate));
-//                            if (difference > 1) {
-//                                $scope.newShifts.push(val.shift[i]);
-//                                $scope.newDates.push(new Date(currentDate));
-//                                while (difference > 1) {
-//                                    currentDate += oneDay;
-//                                    $scope.newShifts.push('');
-//                                    $scope.newDates.push(new Date(currentDate));
-//                                    difference -= 1;
-//                                }
-//                            }
-//                            else {
-//                                $scope.newShifts.push(val.shift[i]);
-//                                $scope.newDates.push(new Date(currentDate));
-//                            }
-//                        }
-//                    }
                 }
                 val.shift = $scope.newShifts;
                 val.date = $scope.newDates;
